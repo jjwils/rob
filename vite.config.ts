@@ -46,6 +46,7 @@ function removeVersionSpecifiers() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/rob/',
   plugins: [react(), tailwindcss(), removeVersionSpecifiers()],
 })
 

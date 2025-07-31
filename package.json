@@ -2,6 +2,7 @@
   "name": "robs-site",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://jjwils.github.io/rob",
   "type": "module",
   "scripts": {
     "dev": "vite",
