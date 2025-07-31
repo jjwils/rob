@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { 
   Target, 
   Star, 
@@ -203,14 +202,14 @@ export function MatchResults({ onNavigate, userType }: MatchResultsProps) {
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="text-lg">
-                        {userType === 'candidate' ? match.jobTitle : match.candidateName}
+                        {userType === 'candidate' ? (match as any).jobTitle : (match as any).candidateName}
                       </CardTitle>
                       <CardDescription className="flex items-center gap-4 mt-2">
                         {userType === 'candidate' ? (
                           <>
                             <span className="flex items-center gap-1">
                               <Briefcase className="h-4 w-4" />
-                              {match.company}
+                              {(match as any).company}
                             </span>
                             <span className="flex items-center gap-1">
                               <MapPin className="h-4 w-4" />
@@ -218,18 +217,18 @@ export function MatchResults({ onNavigate, userType }: MatchResultsProps) {
                             </span>
                             <span className="flex items-center gap-1">
                               <Clock className="h-4 w-4" />
-                              {match.posted}
+                              {(match as any).posted}
                             </span>
                           </>
                         ) : (
                           <>
                             <span className="flex items-center gap-1">
                               <Briefcase className="h-4 w-4" />
-                              {match.currentRole}
+                              {(match as any).currentRole}
                             </span>
                             <span className="flex items-center gap-1">
                               <Users className="h-4 w-4" />
-                              {match.experience}
+                              {(match as any).experience}
                             </span>
                             <span className="flex items-center gap-1">
                               <MapPin className="h-4 w-4" />
@@ -268,12 +267,12 @@ export function MatchResults({ onNavigate, userType }: MatchResultsProps) {
                   {userType === 'candidate' ? (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                       <DollarSign className="h-4 w-4" />
-                      <span>{match.salary}</span>
+                      <span>{(match as any).salary}</span>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                       <DollarSign className="h-4 w-4" />
-                      <span>Expected: {match.expectedSalary}</span>
+                      <span>Expected: {(match as any).expectedSalary}</span>
                     </div>
                   )}
 

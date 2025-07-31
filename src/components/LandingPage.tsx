@@ -1,9 +1,7 @@
-import React from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-import { Target, Users, Briefcase, Zap, Star, TrendingUp } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Users, Briefcase, Zap, Star, TrendingUp } from 'lucide-react';
 
 interface LandingPageProps {
   onUserTypeSelect: (type: 'candidate' | 'recruiter') => void;
